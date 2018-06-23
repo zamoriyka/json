@@ -1,0 +1,21 @@
+{
+  "property": [
+    {
+      "name": "Renaissance Tower",
+      "address": "1201 Elm Street, Dallas, TX 75251"
+    },
+    {
+      "property type": "Property Type: Commercial",
+      "total building area": "Total Building Area: 1,700,000",
+      "tenancy": "Tenancy: Lorem Ipsum",
+      "no. of tenant": "No. of tenant: 59",
+      "website": "Website: www.renaissancetower.net",
+      "property class": "Property Class: A",
+      "year built": "Year Built: 1974",
+      "floors": "Floors: 56"
+    },
+    {
+      "description": "Description: Completed in 1974, the office tower was substantially renovated between 1986 and 1991 and emerged with a heightened image and even more illustrious profile within Downtown Dallas. Renowned for it's distinctive double 'X' lighting and majestic rooftop spires, Renaissance Tower is a Dallas Landmark"
+    }
+  ]
+}
