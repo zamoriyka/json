@@ -1,4 +1,41 @@
 .image {
-    width: 150px;
-    height: 150px;
+    width: 210px;
+    height: 210px;
 }
+
+.map {
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+}
+
+.container {
+    //margin-left: 180px;
+    //margin-right: 180px;
+    border: 1px solid silver;
+    border-radius: 5px;
+
+
+}
+
+.container div{
+    padding: 10px;
+
+}
+
+.title {
+    height: 15px;
+}
+
+.address {
+    height: 15px;
+}
+
+.media_container {
+    display: flex;
+}
+
+.property_details_container {
+
+}
+

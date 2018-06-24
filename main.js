@@ -1,55 +1,10 @@
 var parent = document.createElement("div");
 document.body.appendChild(parent);
 
-var json = {
-    name: "Renaissance Tower",
-    address: "1201 Elm Street, Dallas, TX 75251",
-
-    property_type: "Property Type: Commercial",
-    total_building_area: "Total Building Area: 1,700,000",
-    tenancy: "Tenancy: Lorem Ipsum",
-    no_of_tenant: "No. of tenant: 59",
-    website: "Website: www.renaissancetower.net",
-    property_class: "Property Class: A",
-    year_built: "Year Built: 1974",
-    floors: "Floors: 56",
-    description: "Description: Completed in 1974, the office tower was substantially renovated between 1986 and 1991 and emerged with a heightened image and even more illustrious profile within Downtown Dallas. Renowned for it's distinctive double 'X' lighting and majestic rooftop spires, Renaissance Tower is a Dallas Landmark",
-
-    unit_name_number: "Unit name/number",
-    record_type: "Record Type",
-    available_area: "Available Area",
-
-
-    availabilities: [
-        {
-            unit_name_number: "Renaissance Tower, 1/F-, 1-999",
-            record_type: "Vacant",
-            available_area: "25,667,00 sf"
-        },
-        {
-            unit_name_number: "Renaissance Tower, 2/F-, 2-999",
-            record_type: "Future Available",
-            available_area: "25,667,00 sf"
-        },
-        {
-            unit_name_number: "Renaissance Tower, 3/F-, 2-999",
-            record_type: "Future Available",
-            available_area: "25,667,00 sf"
-        },
-        {
-            unit_name_number: "Renaissance Tower, 4/F-, 2-999",
-            record_type: "Future Available",
-            available_area: "25,667,00 sf"
-        }
-    ]
-
-};
-
-
 function fillName(name) {
     var element = document.querySelector('div.title p');
     element.textContent = name;
-    console.log(element);
+
 }
 
 for (var key in json) {
@@ -104,98 +59,99 @@ for (var key in json) {
 
     if (key === "floors") {
         fillFloors(json[key]);
+        continue;
     }
 
     if (key === "description") {
         fillDescription(json[key]);
+        continue;
+    }
+
+    if (key === "availabilities") {
+        createTable(json[key]);
+        continue;
+    }
+
+    if (key === "images") {
+        createImage(json[key]);
+        continue;
+    }
+
+    if (key === "marker") {
+        fillCoordinates(json[key]);
     }
 }
 
+function fillCoordinates(marker) {
+    var element = document.querySelector('.map');
+    element.dataset.lng = marker.lng;
+    element.dataset.lat = marker.lat;
+    console.log(element);
+
+}
 
 
 function fillAddress(address) {
     var element = document.querySelector('div.address p');
     element.textContent = address;
-    console.log(element);
+
 }
 
 function fillPropertyType(property_type) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(1)');
     element.textContent = property_type;
-    console.log(element);
+
 }
 
 function fillTotalBuildingArea(total_building_area) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(2)');
     element.textContent = total_building_area;
-    console.log(element);
+
 }
 
 function fillTenancy(tenancy) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(3)');
     element.textContent = tenancy;
-    console.log(element);
+
 }
 
 function fillNoOfTenant(no_of_tenant) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(4)');
     element.textContent = no_of_tenant;
-    console.log(element);
+
 }
 
 function fillWebsite(website) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(5)');
     element.textContent = website;
-    console.log(element);
+
 }
 
 function fillPropertyClass(property_class) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(6)');
     element.textContent = property_class;
-    console.log(element);
+
 }
 
 function fillYearBuilt(year_built) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(7)');
     element.textContent = year_built;
-    console.log(element);
+
 }
 
 function fillFloors(floors) {
     var element = document.querySelector('div.property_details_container ul li:nth-child(8)');
     element.textContent = floors;
-    console.log(element);
+
 }
 
 function fillDescription(description) {
     var element = document.querySelector('div.description p');
     element.textContent = description;
-    console.log(element);
+
 }
 
-function createTable() {
-    var availabilities = [
-        {
-            unit_name_number: "Renaissance Tower, 1/F-, 1-999",
-            record_type: "Vacant",
-            available_area: "25,667,00 sf"
-        },
-        {
-            unit_name_number: "Renaissance Tower, 2/F-, 2-999",
-            record_type: "Future Available",
-            available_area: "25,667,00 sf"
-        },
-        {
-            unit_name_number: "Renaissance Tower, 3/F-, 2-999",
-            record_type: "Future Available",
-            available_area: "25,667,00 sf"
-        },
-        {
-            unit_name_number: "Renaissance Tower, 4/F-, 2-999",
-            record_type: "Future Available",
-            available_area: "25,667,00 sf"
-        }
-    ];
+function createTable(availabilities) {
 
     var col = [];
     for (var i = 0; i < availabilities.length; i++) {
@@ -206,20 +162,19 @@ function createTable() {
         }
     }
 
-    var table = document.createElement("table");
+    var table = document.createElement('table');
 
     var tr = table.insertRow(-1);
 
+    // "th" creates each cell and fill it and append it to tr
     for (var i = 0; i < col.length; i++) {
-        var th = document.createElement("th");
-        th.textContent = col[i];
-        tr.appendChild(th);
+
     }
 
     for (var i = 0; i < availabilities.length; i++) {
 
         tr = table.insertRow(-1);
-
+//add new tr and fill it
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
             tabCell.textContent = availabilities[i][col[j]];
@@ -227,31 +182,29 @@ function createTable() {
     }
 
     var divContainer = document.querySelector('.availabilities');
-    divContainer.textContent = "";
     divContainer.appendChild(table);
-    console.log(divContainer);
 
 }
-createTable();
 
-var data = {
-    "images": [
-        {
-            image: "img.jpg"
-        }
-    ]
-};
-
-data.images.forEach( function(obj) {
-    var img = new Image();
-    img.src = obj.image;
-    img.setAttribute("class", "image");
-    img.setAttribute("alt", "effy");
-    document.querySelector('.image').appendChild(img);
-});
+function createImage(images) {
+    images.forEach(function (obj) {
+        var img = new Image();
+        img.src = obj.image;
+        img.setAttribute("class", "image");
+        document.querySelector('.image').appendChild(img);
+    });
+}
 
 
+function initMap() {
+    var element = document.querySelector('.map');
+    var coordinates = {lat: parseFloat(element.dataset.lat), lng: parseFloat(element.dataset.lng)};
 
+    var map = new google.maps.Map(element, {zoom: 4, center: coordinates});
+
+    var markers = new google.maps.Marker({position: coordinates, map: map});
+
+}
 
 
 

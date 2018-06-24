@@ -3,10 +3,59 @@
 <head>
     <title>Renaissance Tower</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="property.json"></script>
+    <script>
+        json = {
+            name: "Renaissance Tower",
+            address: "1201 Elm Street, Dallas, TX 75251",
+
+            property_type: "Property Type: Commercial",
+            total_building_area: "Total Building Area: 1,700,000",
+            tenancy: "Tenancy: Lorem Ipsum",
+            no_of_tenant: "No. of tenant: 59",
+            website: "Website: www.renaissancetower.net",
+            property_class: "Property Class: A",
+            year_built: "Year Built: 1974",
+            floors: "Floors: 56",
+            description: "Description: Completed in 1974, the office tower was substantially renovated between 1986 and 1991 and emerged with a heightened image and even more illustrious profile within Downtown Dallas. Renowned for it's distinctive double 'X' lighting and majestic rooftop spires, Renaissance Tower is a Dallas Landmark",
+
+            availabilities: [
+                {
+                    unit_name_number: "Renaissance Tower, 1/F-, 1-999",
+                    record_type: "Vacant",
+                    available_area: "25,667,00 sf"
+                },
+                {
+                    unit_name_number: "Renaissance Tower, 2/F-, 2-999",
+                    record_type: "Future Available",
+                    available_area: "25,667,00 sf"
+                },
+                {
+                    unit_name_number: "Renaissance Tower, 3/F-, 2-999",
+                    record_type: "Future Available",
+                    available_area: "25,667,00 sf"
+                },
+                {
+                    unit_name_number: "Renaissance Tower, 4/F-, 2-999",
+                    record_type: "Future Available",
+                    available_area: "25,667,00 sf"
+                }
+            ],
+
+            marker: {
+                lat: '32.7811716',
+                lng: '-96.80236300000001'
+            },
+
+            images: [
+                {
+                    image: "img.jpg"
+                }
+            ]
+        };
+    </script>
 </head>
 <body>
-
-
 <div class="container">
     <div class="title_container">
         <div class="title">
@@ -20,9 +69,11 @@
         <div class="image">
 
         </div>
-        <div class="map"></div>
+        <div class="map" data-lat="" data-lng=""></div>
+
     </div>
-    <div class="property_details_container">Property Details
+    <div class="property_details_container">
+        <p>Property Details</p>
      <ul>
          <li></li>
          <li></li>
@@ -37,14 +88,22 @@
     <div class="description">
         <p></p>
     </div>
-    <div class="availabilities">Availabilities
-
-
+    <div class="availabilities">
+        <p>Availabilities</p>
+        <table>
+            <th>Unit name/number</th>
+            <th>Record Type</th>
+            <th>Available Area</th>
+        </table>
     </div>
 </div>
 
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq9fSzXeYePBWbhTZ0hGMHI7BH7GZjjEo&callback=initMap">
+</script>
 
 <script src="main.js"></script>
+
 
 </body>
 </html>
