@@ -1,4 +1,4 @@
-div {
-    padding:10px;
-    border: 1px solid silver;
+.image {
+    width: 150px;
+    height: 150px;
 }

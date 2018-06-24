@@ -16,6 +16,31 @@
     },
     {
       "description": "Description: Completed in 1974, the office tower was substantially renovated between 1986 and 1991 and emerged with a heightened image and even more illustrious profile within Downtown Dallas. Renowned for it's distinctive double 'X' lighting and majestic rooftop spires, Renaissance Tower is a Dallas Landmark"
+    },
+    {
+      "unit name/number": "Unit name/number",
+      "record type": "Record Type",
+      "available area": "Available Area"
+    },
+    {
+      "unit name/number": "Renaissance Tower, 1/F-, 1-999",
+      "record type": "Vacant",
+      "available area": "25,667,00 sf"
+    },
+    {
+      "unit name/number": "Renaissance Tower, 2/F-, 2-999",
+      "record type": "Vacant",
+      "available area": "25,667,00 sf"
+    },
+    {
+      "unit name/number": "Renaissance Tower, 3/F-, 3-999",
+      "record type": "Vacant",
+      "available area": "25,667,00 sf"
+    },
+    {
+      "unit name/number": "Renaissance Tower, 4/F-, 4-999",
+      "record type": "Vacant",
+      "available area": "25,667,00 sf"
     }
   ]
 }
